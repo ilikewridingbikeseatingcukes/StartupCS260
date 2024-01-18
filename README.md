@@ -7,13 +7,9 @@
   
 ### Design
 
+![IMG_20240117_235037](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/ae55247d-3419-4344-81c6-d0444e0fd8f6)
 
 
-...
-
-
-
-:)
 
 ### Key Features
 * Secure login over HTTPS
