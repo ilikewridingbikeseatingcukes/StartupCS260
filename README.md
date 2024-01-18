@@ -1,20 +1,25 @@
-### StartupCS260
+# StartupCS260
 ## Startup Specification
 
-# Elevator Pitch
+### Elevator Pitch
 
-# Design
+### Design
 
-# Keay Features
+### Keay Features
 
-# Technologies
+### Technologies
 
-# HTML Deliverable
+### HTML Deliverable
 
-# CSS Deliverable
+### CSS Deliverable
 
-# JavaScript Deliverable
+### JavaScript Deliverable
 
-# Service Deliverable
+### Service Deliverable
 
-# DB/Login Deliverable
+### DB/Login Deliverable
+
+### WebSocket Deliverable
+
+### React Deliverable
+
