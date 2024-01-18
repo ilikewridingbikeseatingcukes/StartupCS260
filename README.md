@@ -9,13 +9,11 @@
 
 ### Key Features
 * Secure login over HTTPS
+* Display of timers/buttons for settings
 * Customizable study timers (Pomodoro study timer, classic Kitchen timer, break timers, etc.)
 * Customizable backdrop for timer
 * Results from study sessions are continuously stored (i.e. how long studied, which days)
 * Totals from all users' study sessions are displayed in realtime
-* h
-* h
-* Not done yet, come double check
 
 ### Technologies
 The following technologies will be used + descriptions:
