@@ -25,24 +25,24 @@
 
 ### Technologies
 The following technologies will be used + descriptions:
-* HTML - I will use correct HTML structure for this application. Two HTML pages will be used. One for login, and one for the timers/studying. There also may be several popups within the timers/studying page for settings. Potentially hyperlinks to music for studying.
-* CSS - Will be used to style my webpage to look on different screen girths, additionally using good whitespace, color choice, and contrast (like the principles in CS 202 C.R.A.P.)
-* JavaScript - Will be used to creat the login page, setting display, applying settings/user prefrences, display users study time statistics, backend endpoint calls.
-* Service - there will be backend service with endpoints for:
+* **HTML** - I will use correct HTML structure for this application. Two HTML pages will be used. One for login, and one for the timers/studying. There also may be several popups within the timers/studying page for settings. Potentially hyperlinks to music for studying.
+* **CSS** - Will be used to style my webpage to look on different screen girths, additionally using good whitespace, color choice, and contrast (like the principles in CS 202 C.R.A.P.)
+* **JavaScript** - Will be used to creat the login page, setting display, applying settings/user prefrences, display users study time statistics, backend endpoint calls.
+* **Service** - there will be backend service with endpoints for:
   * login
   * retrieving setting prefrences
   * retrieving study status
   * DB/Login - Store users, setting prefrences, and stats in database. Register and login users. Credentials securely stored in database. Can't keep track of time studied unless authenticated.
-* WebSocket - After each user's study session, their stats are broadcast to all other users.
-* React - Application ported to use the React web framework.
+* **WebSocket** - After each user's study session, their stats are broadcast to all other users.
+* **React** - Application ported to use the React web framework.
 
 ### HTML Deliverable
 For this deliverable I will build the skeleton of the application with HTML
-* HTML Pages - Two Pages: One represents Login pages, another is for the actual timer.
-* Text - The timer/setting popups are represented by text
-* Images - Processing_ _ :P _ _ _ but will be used for backdrops/icons to make things beautiful.
-* DB/Login - Input box/Submit box for the login page.
-* WebSocket - The "leaderboard" of times studied represents the current tally of time studied per user for the week. 
+* **HTML Pages** - Two Pages: One represents Login pages, another is for the actual timer.
+* **Text** - The timer/setting popups are represented by text
+* **Images** - Processing_ _ :P _ _ _ but will be used for backdrops/icons to make things beautiful.
+* **DB/Login** - Input box/Submit box for the login page.
+* **WebSocket** - The "leaderboard" of times studied represents the current tally of time studied per user for the week. 
 
 ### CSS Deliverable
 For this deliverable I will be styling the study timer to its final appearance.
@@ -74,7 +74,7 @@ For this deliverable I will likely be adding backend endpoints to recieve stats 
 ### DB/Login Deliverable
 For this deliverable I associate the time studied with the logged in user. I will store the times in the database. 
 
-(Used list on website for inspiration, I don't feel knowledgable enough to give a detailed list that was self generated. I understand big picture ideas, but still figuring out the small stuff.)
+~~(Used list on website for inspiration, I don't feel knowledgable enough to give a detailed list that was self generated. I understand big picture ideas, but still figuring out the small stuff.)~~
 
 * Database - to be created
 * Stores Data - eventually
@@ -87,7 +87,7 @@ For this deliverable I associate the time studied with the logged in user. I wil
 ### WebSocket Deliverable
 For this deliverable I will webSocket to update time spent studying (probably on) the frontend in realtime.
 
-(Used list on website for inspiration, I don't feel knowledgable enough to give a detailed list that was self generated. I understand big picture ideas, but still figuring out the small stuff.)
+~~(Used list on website for inspiration, I don't feel knowledgable enough to give a detailed list that was self generated. I understand big picture ideas, but still figuring out the small stuff.)~~
 
 * Backend for Websocket
 * Frontend for Websocket
@@ -97,7 +97,7 @@ For this deliverable I will webSocket to update time spent studying (probably on
 ### React Deliverable
 For this deliverable, I will be using react. Cookie cutter I know, but useful and simple. 
 
-(Used list on website for inspiration, I don't feel knowledgable enough to give a detailed list that was self generated. I understand big picture ideas, but still figuring out the small stuff.)
+~~(Used list on website for inspiration, I don't feel knowledgable enough to give a detailed list that was self generated. I understand big picture ideas, but still figuring out the small stuff.)~~
 
 * Bundled and transpiled
 * Components - Probably login, and time studied tracking will be in this section
