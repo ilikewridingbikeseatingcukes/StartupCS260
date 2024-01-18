@@ -1,4 +1,5 @@
 # StartupCS260
+
 ## Startup Specification
 
 ### Elevator Pitch
