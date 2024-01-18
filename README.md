@@ -8,7 +8,7 @@
 ### Design
 
 ![IMG_20240117_235037](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/ae55247d-3419-4344-81c6-d0444e0fd8f6)
-
+THe design above shows 1: the opening page/what you see, 2: the login page, and 3: the Popup with the settings. 
 
 
 ### Key Features
