@@ -62,11 +62,46 @@ For this deliverable I will be using Javascript so that the website is scalable,
 
 ### Service Deliverable
 For this deliverable I will likely be adding backend endpoints to recieve stats from studying to display. 
-* 
+
+(Used list on website, I don't feel knowledgable enough to give a detailed list that was self generated. I understand big picture ideas, but still figuring out the small stuff.)
+
+* Node.js/ Express HTTP
+* Statice middleware for frontend
+* Calls to third party endpoints
+* Backend service endpoints
+* Frontend calls service endpoints.
+  
 ### DB/Login Deliverable
 For this deliverable I associate the time studied with the logged in user. I will store the times in the database. 
-* 
+
+(Used list on website for inspiration, I don't feel knowledgable enough to give a detailed list that was self generated. I understand big picture ideas, but still figuring out the small stuff.)
+
+* Database - to be created
+* Stores Data - eventually
+* User Regestration
+* Existing User - tbd
+* Storing credentials
+* Restrics functionality
+
+  
 ### WebSocket Deliverable
+For this deliverable I will webSocket to update time spent studying (probably on) the frontend in realtime.
+
+(Used list on website for inspiration, I don't feel knowledgable enough to give a detailed list that was self generated. I understand big picture ideas, but still figuring out the small stuff.)
+
+* Backend for Websocket
+* Frontend for Websocket
+* Data for Websocket
+* Websocket Data Display
 
 ### React Deliverable
+For this deliverable, I will be using react. Cookie cutter I know, but useful and simple. 
+
+(Used list on website for inspiration, I don't feel knowledgable enough to give a detailed list that was self generated. I understand big picture ideas, but still figuring out the small stuff.)
+
+* Bundled and transpiled
+* Components - Probably login, and time studied tracking will be in this section
+* Router - routing between time and login
+* Hooks - ??
+
 
