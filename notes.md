@@ -1,10 +1,10 @@
 # Creating A Website!
 Extreme Simplification in descriptions - 
 Steps:
-1. 
-2. 
-3. 
-4. 
+1. /n
+2. /n
+3. /n
+4. /n
 
 Other helpful things:
 * Github
