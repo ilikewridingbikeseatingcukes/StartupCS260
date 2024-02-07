@@ -34,11 +34,11 @@ The following technologies will be used + descriptions:
 
 ### HTML Deliverable
 For this deliverable I will build the skeleton of the application with HTML
-* **HTML Pages** - Two Pages: One represents Login pages, another is for the actual timer.
-* **Text** - The timer/setting popups are represented by text
-* **Images** - Processing_ _ :P _ _ _ but will be used for backdrops/icons to make things beautiful.
-* **DB/Login** - Input box/Submit box for the login page.
-* **WebSocket** - The "leaderboard" of times studied represents the current tally of time studied per user for the week. 
+* **HTML Pages** - Two Pages: One represents the login page (login.html), returning users(returninguserslogin.html), and the actual timer/home page(index.html). I have two additional pages that represent popups in my index.html(websocket.html & data.html).
+* **Text** - The timer/setting popups are represented by text.
+* **Images** - Processing_ _ :P _ _ _ but will be used for backdrops/icons to make things beautiful. I currently have one that represents the digital representation of said timer.
+* **DB/Login** - Input box/Submit box for the login page.(login.html & returninguserslogin.html)
+* **WebSocket** - The "leaderboard" of times studied represents the current tally of time studied per user for the week(going to be a popup on index.html, currently represented by the link "websocketplaceholder"). 
 
 ### CSS Deliverable
 For this deliverable I will be styling the study timer to its final appearance.
