@@ -55,9 +55,9 @@ Description Here:
 
 
 
-Javascript Intro(semi colons optional, walkthrough with code, versions):https://learn.cs260.click/page/javascript/introduction/introduction_md
-Console(log,timers,count,commands):https://learn.cs260.click/page/javascript/console/console_md
-Merging JavaScript and Html(mini example):https://learn.cs260.click/page/javascript/addingToHtml/addingToHtml_md
+Javascript Intro(semi colons optional, walkthrough with code, versions):https://learn.cs260.click/page/javascript/introduction/introduction_md /n
+Console(log,timers,count,commands):https://learn.cs260.click/page/javascript/console/console_md /n
+Merging JavaScript and Html(mini example):https://learn.cs260.click/page/javascript/addingToHtml/addingToHtml_md /n
 
 
 
