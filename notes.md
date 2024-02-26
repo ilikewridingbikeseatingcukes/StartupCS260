@@ -48,3 +48,19 @@ Codepen:https://codepen.io/cukes/pen/NWJEVZo?editors=1000
 Description here:
 
 Basic CSS:
+
+
+##JavaScript
+Description Here:
+
+
+
+Javascript Intro(semi colons optional, walkthrough with code, versions):https://learn.cs260.click/page/javascript/introduction/introduction_md
+Console(log,timers,count,commands):https://learn.cs260.click/page/javascript/console/console_md
+Merging JavaScript and Html(mini example):https://learn.cs260.click/page/javascript/addingToHtml/addingToHtml_md
+
+
+
+
+
+
