@@ -86,32 +86,36 @@ In-depth Guide:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 
 Classes,Pointers,Inheritance:https://learn.cs260.click/page/javascript/objectClasses/objectClasses_md
 
-Regular Expressions:https://learn.cs260.click/page/javascript/regularExpressions/regularExpressions_md
+##Regular Expressions##
+:https://learn.cs260.click/page/javascript/regularExpressions/regularExpressions_md
 :https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions
 
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/159776b5-a240-4c2a-be42-435db17cb93a)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/941dd0a1-149a-4b33-bb3c-9b456958a026)
 
-Rest&Spred:https://learn.cs260.click/page/javascript/restSpread/restSpread_md
+##Rest&Spred##
+:https://learn.cs260.click/page/javascript/restSpread/restSpread_md
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/cb13a5ef-e985-4db2-b9cf-1aefed6ca5bc)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/c8d892ef-c28b-400d-a18e-d2e29bab3bfa)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/8c183b18-5921-44e9-aa1d-582b702e5713)
 
-Exeptions(Try/accept/fallbacks):https://learn.cs260.click/page/javascript/exceptions/exceptions_md
+##Exeptions(Try/accept/fallbacks)##
+:https://learn.cs260.click/page/javascript/exceptions/exceptions_md
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/54aa6345-dc65-4023-bd36-845ffd893b19)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/c306833f-5a37-4905-b7d2-7941f684ab0c)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/cb365d51-10a6-4b64-9d5c-33f0553e062d)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/501ee596-980e-47aa-a89a-7707a5c43a0b)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/f9b17b33-e3e0-4d9f-bd26-de55def12161)
 
-Destructuring(:https://learn.cs260.click/page/javascript/destructuring/destructuring_md
+##Destructuring##
+:https://learn.cs260.click/page/javascript/destructuring/destructuring_md
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/3e804ede-3c2f-4793-a6d5-ed6ff01a50cf)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/52ace916-6de8-4c05-9ab3-484c5b45e620)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/b76b0f7e-534a-4681-95d7-913a9e50f1b2)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/92a3f462-1077-4f70-982a-a6b9e0f6db61)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/daf537fa-dc01-4549-bafc-4f92e8dc1b37)
 
-Scope
+##Scope##
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/9b9c3320-acec-44e2-aa69-739bc595cdd6)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/c3ed65f3-e967-421f-89f4-cab0ae7431b6)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/7607e5a2-6a8e-420d-9274-470b33e10410)
