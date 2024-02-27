@@ -104,6 +104,26 @@ Exeptions(Try/accept/fallbacks):https://learn.cs260.click/page/javascript/except
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/501ee596-980e-47aa-a89a-7707a5c43a0b)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/f9b17b33-e3e0-4d9f-bd26-de55def12161)
 
+Destructuring(:https://learn.cs260.click/page/javascript/destructuring/destructuring_md
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/3e804ede-3c2f-4793-a6d5-ed6ff01a50cf)
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/52ace916-6de8-4c05-9ab3-484c5b45e620)
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/b76b0f7e-534a-4681-95d7-913a9e50f1b2)
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/92a3f462-1077-4f70-982a-a6b9e0f6db61)
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/daf537fa-dc01-4549-bafc-4f92e8dc1b37)
+
+Scope
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/9b9c3320-acec-44e2-aa69-739bc595cdd6)
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/c3ed65f3-e967-421f-89f4-cab0ae7431b6)
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/7607e5a2-6a8e-420d-9274-470b33e10410)
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/efeaca2a-0d09-49a9-88a0-d3459bac8832)
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/8eebd6fa-9624-40ac-8f4e-d39564b730f5)
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/7abc6b8f-ff0f-4142-b612-c1f84cda4466)
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/6c52f67e-648a-49a2-8acc-358742a808af)
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/dc30fcd8-7e58-4ce4-9cd8-12f648a5f34a)
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/385f4627-01e6-429a-8bab-80eb8766b8e3)
+
+
+
 
 
 
