@@ -1,10 +1,507 @@
 # Creating A Website!
+The primary objective of this course is to help you understand the technologies necessary to launch a web application startup. Towards this goal you will build your very own startup application. The actual application you build is entirely up to you, but it must successfully demonstrate the technologies we focus on.
+
+The course is divided into distinct milestones. At each milestone you will evolve your startup application to take on more and more functionality. You start with a conceptual design document and then build a structural shell for the application using HTML. Next comes styling with CSS, interactivity with JavaScript, using third party web services, hosting your own web service, database connectivity for persistent storage, authentication, data pushed from the server with WebSockets, and finally, converting to a modern web framework with React.
+
+HTML - Basic structural and organizational elements
+CSS - Styling and animating
+JavaScript - Interactivity (e.g. What happens when a user presses a button)
+Web service - Remote functions that your application calls on your, and someone else's, web server (e.g. saveScores, getWeather, chatWithFriend)
+Authentication - Creating accounts and logging in
+Database persistence - Storing user data in a database (e.g. Save the high scores and login information)
+WebSocket - Support for pushing data from the server. This can be peer to peer communication (e.g. chatting with friends through the browser), or realtime data from the server (e.g. stock prices or the current game leader).
+Web framework - Using React to add components and request routing
+The Simon application is meant to give you an example of the level of complexity you are looking for, and how to build your startup application. Use Simon as a chance to experiment with things you are considering doing with your startup application. Once you learn how Simon does something you can leverage that code in your startup.
+
+Immediately start thinking about what you would like to build. What you do for your startup application is completely up to you. So make it something that is interesting to you. It doesn't have to be complex. In fact simple is usually better. Dream big, but pick a very small, minimal viable product, for your startup application.
+
+Keep the styling of your application simple. One common mistake is to spend enormous amounts of time trying to make your application look a certain way. Instead leverage what Simon does. Make it look reasonable and then move on to the next technology. You can always come back later and make it look better.
+
+# History 
+A brief history of web programming
+Having a basic knowledge of the history of web programming helps you to understand why we have the assortment of technologies that you will be working with. There has been three distinct phases that make up this history.
+
+The formation of the internet that supports the communication of web applications
+The creation of HTML and HTTP that made it possible to shared hyperlinked documents (Web 1.0).
+The creation of CSS and JavaScript that enabled interactive web applications (Web 2.0).
+The Internet
+The essential first step to enabling what we now call web programming was the formation of a global communications network that was reliable and publicly available. This was made possible when the United States Department of Defense created the ARPANET as a means of sharing information between universities doing defense related research.
+
+Arpanet
+
+— ARPANET access points in the 1970s (Source: Wikipedia)
+
+ARPANET was defined with the goal of withstanding a nuclear attack. This led to the implementation of a redundantly connected graph of computing devices. Within that network, two computers communicate by dynamically discovering a path to each other without the help of a single central authority.
+
+In the 1980s, the National Science Foundation continued the expansion of the network, and commercial enterprises began to make significant contributions. This eventually led to the Internet as we know it today, as the world went online as part of a massive explosion of consumer participation in the early 1990s. This was followed by another exponential increase in the 2000s as smart phones and appliances became common.
+
+The management of the Internet is controlled by two major organizations. The Internet Engineering Task Force (IETF) defines the technical standards that specify how the physical network communicates. The Internet Corporation for Assigned Names and Numbers (ICANN) oversees both the Internet Protocol (IP) address space, and the Domain Name System (DNS). These two databases form the address book of the Internet. When the United States government transitioned control of these governing bodies to a global community of non-profit stake holders in 2016, the Internet became a worldwide asset free from any specific political control.
+
+Hypertext Markup Language (HTML)
+Tim Berners Lee
+
+“I just had to take the hypertext idea and connect it to the TCP and DNS ideas and—ta-da!—the World Wide Web.”
+
+— Tim Berners-Lee, (Source: Answers for Young People)
+
+Starting in 1980, Tim Berners-Lee was working at the research laboratory Cern. He was tasked with building a system that would allow researchers to share documents between remote academic institutions. Realizing that the ARPANET provided the necessary connectivity, he defined the protocols for document sharing that formed the underpinning of what would be termed the World Wide Web. Berners-Lee named the document format the HyperText Markup Language (HTML) based on inspiration from the digital publishing industry's Standard Generalized Markup Language (SGML). One of the key innovations of HTML was the idea that documents could be interconnected with what he termed hyperlinks to allow immediate access to related documents. In 1990 he put all the pieces together and built the world's first web server on his desktop NeXT computer. You can visit a reproduction of the first web site at info.cern.ch.
+
+First web server
+
+— First web server (Source: Cern)
+
+Originally, HTML contained only 18 elements, or tags. The latest version of HTML has now grown to over 100. The initial explosion of elements was caused in part by browser vendors racing to create differentiating functionality in order to gain market share. Since 1996 the HTML specification has been controlled by the W3C. The following is an example of a simple HTML document.
+
+<html>
+  <body>
+    <p>Hello world!</p>
+  </body>
+</html>
+HTTP and URL
+While HTML was an incredible step forward, Berners-Lee also made other significant contributions. This included the definition of the HyperText Transfer Protocol (HTTP) and the Uniform Resource Locator (URL). These two definitions specify how web documents are addressed and transmitted across the Internet. The following gives an example of a URL and HTTP request.
+
+http://info.cern.ch/hypertext/WWW/Helping.html
+GET /hypertext/WWW/Helping.html HTTP/1.1
+Host: info.cern.ch
+Accept: text/html
+Cascading Style Sheets (CSS)
+Cascading Style Sheets (CSS) was first proposed in 1994 by Håkon Wium Lie, a contemporary of Berners-Lee at CERN, in order to give HTML documents visual styling independent of the content's structure. Before the introduction of CSS, HTML was going down the path of hard coding the visual appearance of the content with HTML elements. This would have resulted in a single visual style for the entire web that was completely defined by the browser vendors.
+
+Hakon Lie
+
+“If we hadn’t developed CSS, we could have ended up with the web being a giant fax machine”
+
+— Håkon Wium Lie (Source: Medium.com)
+
+By 1996, CSS became a standard and all the major browsers began to implement the functionality. Unfortunately, for the first years of CSS the same proprietary wars that plagued HTML also affected CSS. Much of the work on version 2.1 was to remove error and make all the features of CSS compatible. Here is a simple example of CSS that defines the white spacing, color, and shadowing of paragraph text.
+
+p {
+  margin: 0;
+  padding: 20px 0;
+  color: #00539f;
+  text-shadow: 3px 3px 1px black;
+}
+The ability of CSS to style a web page has increased significantly from its original implementation. With modern CSS a web programmer can import fonts, animate HTML elements, respond to user actions, and dynamically alter the entire layout of the page based on the size of a device and its orientation.
+
+JavaScript
+In 1995 Netscape (the maker of the popular browser Navigator) decided to add the ability to script web pages. The initial implementation was led by Brendan Eich and given the name JavaScript. JavaScript turned the previously static web into an interactive experience where a web page could dynamically change based upon a user's interaction.
+
+Brendan Eich
+
+“Always bet on JS”
+
+— Brendan Eich (Source: brendaneich.github.io)
+
+In 1996 Netscape turned control of JavaScript over to ECMA International in an attempt to standardize the definition of the language. At that point JavaScript officially became know as ECMAScript, although it is still commonly referred to as JavaScript.
+
+Here is an example of a simple JavaScript program that combines variables and prints out the result.
+
+const join = (...a) => {
+  return a.reduce((accumulator, currentValue) => accumulator + currentValue);
+};
+
+console.log(join(1, 2));
+console.log(join('hello', ' ', 'world', '!'));
+The first decade of JavaScript was turbulent as each of the major browser vendors attempted to introduce new proprietary features in order to gain market share. Eventually in 2009 the major vendors agreed on the ECMAScript 5 standard and in 2015 ECMAScript 6 was released as the last major feature upgrade. Since then minor releases have taken the year of their release as their version number.
+
+JavaScript outside the browser
+In 2009 Ryan Dahl created Node.js as the first successful application for deploying JavaScript outside of a browser. This changed the mindset of JavaScript as purely a browser technology to one that is leveraged across an entire technology stack.
+
+Other important milestones in the history of JavaScript include the 2013 standardization of the common object notation JSON, a typed variant named TypeScript in 2012, and the introduction of numerous transpilers for converting other languages into compatible ECMAScript.
+
+What's next?
+Looking forward, there are many exciting opportunities, as well as problems to solve. This includes addressing topics like application complexity, device diversity, internationalization, security, privacy, data ownership, environmental impact, global authorization identity, performance, and accessibility.
+
+The only thing certain is that you have an opportunity to be a big part of it. One important lesson you can learn from these early pioneers, is that with web programming, a single person can change the world. I hope to see your face on this history page one day.
 
 
 # HTML
 Description here:
+## Caddy
+Caddy
+Caddy
 
-Link:https://github.com/webprogramming260/.github/blob/main/profile/html/input/input.md
+Caddy is a web service that listens for incoming HTTP requests. Caddy then either serves up the requested static files or routes the request to another web service. This ability to route requests is called a gateway, or reverse proxy, and allows you to expose multiple web services (i.e. your project services) as a single external web service (i.e. Caddy).
+
+For this course, we use Caddy for the following reasons.
+
+Caddy handles all of the creation and rotation of web certificates. This allows us to easily support HTTPS.
+Caddy serves up all of your static HTML, CSS, and JavaScript files. All of your early application work will be hosted as static files.
+Caddy acts as a gateway for subdomain requests to your Simon and startup application services. For example, when a request is made to simon.yourdomain Caddy will proxy the request to the Simon application running with node.js as an internal web service.
+Caddy
+
+Caddy is preinstalled and configured on your server and so you do not need to do anything specifically with it other than configure your root domain name.
+
+Important Caddy files
+As part of the installation of Caddy we created two links in the Ubuntu user's home directory that point to the key Caddy configuration files. There links were created in the home directory so that you do not have to hunt around your server looking for these files.
+
+Configuration file: ~/Caddyfile
+
+Contains the definitions for routing HTTP requests that Caddy receives. This is used to determine the location where static HTML files are loaded from, and also to proxy requests into the services you will create later. Except for when you configure the domain name of your server, you should never have to modify this file manually. However, it is good to know how it works in case things go wrong. You can read about this in the Caddy Server documentation.
+
+HTML files: ~/public_html
+
+This is the directory of files that Caddy serves up when requests are made to the root or your web server. This is configured in the Caddyfile discussed above. If you actually look at the Caddyfile you will see that the static file server is mapped to /usr/share/caddy. That is the location that the file link in the Ubuntu user's home directory, ~/public_html, is pointing to.
+
+:80 {
+      root * /usr/share/caddy
+      file_server
+}
+Therefore, according to this configuration, whenever Caddy receives an HTTP request for any domain name on port 80 it will use the path of the request to find a corresponding file in this directory. For example, a request for http://yourdomainname/index.html will look for a file named index.html in the public_html directory.
+
+## Certifications
+
+HTTPS, TLS, and web certificates
+To this point you have been accessing your web server using HTTP. If you notice your browser has been yelling at you that your connection is ⚠ Not Secure from the location bar.
+
+Non-secure website
+
+During the first couple decades of the web, it was pretty common for websites to simply use HTTP (non-secure hypertext transport protocol) since it was difficult, non-performant, and expensive to secure the connection. Additionally, most websites just provided access to documents and so it didn't need to protect user's information. Usually, only websites that were doing commerce needed a secure connection. That all changed when computers got faster and the web moved from simple document servers (Web 1.0) to full on web applications (Web 2.0) that accepted information from users and displayed that information within the application. Without a secure connection anyone that had access to the network traffic, at any point, from the user's computer to the server handling the request could easily capture all the data sent in either direction. Remember when we used the console program traceroute to show you how many computers your connection goes through. You definitely do not want those computers to have access to your user's sensitive information.
+
+HTTPS and TLS
+The secure version of HTTP is called Secure Hypertext Transport Protocol (HTTPS). This is basically HTTP with a negotiated secure connection that happens before any data is exchanged. Having a secure connection means that all the data is encrypted using the TLS protocol. TLS is sometimes referred to by a now unsecure predecessor protocol named SSL. TLS works by negotiating a shared secret that is then used to encrypt data. You can see the actual negotiation that happens by using the console browser based application curl, along with the -v parameter to see the verbose output of the HTTPS exchange. The > /dev/null redirection throws away the actual HTTP response, since we only care about the negotiation, by redirecting the output to the null device.
+
+➜  curl -v -s https://byu.edu > /dev/null
+
+*   Trying 128.187.16.184:443...
+* Connected to byu.edu (128.187.16.184) port 443 (#0)
+* ALPN: offers h2
+* ALPN: offers http/1.1
+*  CAfile: /etc/ssl/cert.pem
+*  CApath: none
+* (304) (OUT), TLS handshake, Client hello (1):
+} [312 bytes data]
+* (304) (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* (304) (IN), TLS handshake, Unknown (8):
+{ [25 bytes data]
+* (304) (IN), TLS handshake, Certificate (11):
+{ [3211 bytes data]
+* (304) (IN), TLS handshake, CERT verify (15):
+{ [520 bytes data]
+* (304) (IN), TLS handshake, Finished (20):
+{ [52 bytes data]
+* (304) (OUT), TLS handshake, Finished (20):
+} [52 bytes data]
+* SSL connection using TLSv1.3 / AEAD-AES256-GCM-SHA384
+* ALPN: server accepted http/1.1
+* Server certificate:
+*  subject: C=US; ST=Utah; L=Provo; O=Brigham Young University; CN=*.byu.edu
+*  start date: Jan 24 00:00:00 2022 GMT
+*  expire date: Jan 24 23:59:59 2023 GMT
+*  subjectAltName: host "byu.edu" matched cert's "byu.edu"
+*  issuer: C=US; O=DigiCert Inc; CN=DigiCert TLS RSA SHA256 2020 CA1
+*  SSL certificate verify ok.
+You can see that the negotiation is fairly complex as it involves multiple steps in the handshake. A core piece of the handshake is the exchange of a web certificate that identifies the domain name of the server creating the secure connection. The browser will compare the certificate domain name to the one represented in the URL and if they don't match, or the certificate is invalid or out of date, it will display a massive warning.
+
+In the example above we asked for byu.edu and got a valid certificate for byu.edu and so everything looks great.
+
+Web certificates
+Web certificates are generated by a trusted 3rd party using public/private key encryption. The certificate issuer is responsible for verifying that the certificate owner actually owns the domain name represented by the certificate. Once you have a certificate for your domain name, you can serve the certificate from your web server and then the browser can validate the certificate by using the public keys of the certificate issuer.
+
+Until about 2014 it would cost you hundreds of dollars a year to get a web certificate, and you needed a certificate for every domain and subdomain that you owned. That would cost, even a small company, thousands of dollars a year because the certificates needed to be renewed in order to ensure that it still represented the owner of the domain name and to limit the impact of a stolen certificate.
+
+That all changed when two Mozilla employees created a non-profit called Let's Encrypt with the goal of creating trusted web certificates for free. This effectively broke the monopoly that the trusted web certificate issuers had on the industry.
+
+Now using a service like Let's Encrypt, and the IETF standard ACME protocol that they pioneered, anyone who owns a domain name, can dynamically generate and renew a certificate for free. This incredible contribution of critical web technology has made the web safer, and more reliable, for everyone.
+
+Caddy uses Let's Encrypt to generate a web certificate every time an HTTPS request is made for a domain name that Caddy doesn't have a web certificate for. When this happens Caddy asks Let's Encrypt to verify that the domain for the requested certificate is actually owned by the requester. Let's Encrypt does that by telling the requester to return a specific digitally signed response for a temporary URL when an HTTP request to the domain is made. Let's Encrypt then makes the HTTP request, and if successful, issues the certificate to the requester.
+
+Let's Encrypt cert generation
+
+If you are interested, you can learn about how the Let's Encrypt generates certificate from their documentation.
+
+Enabling HTTPS
+Modern browsers now expect web servers to exclusively use HTTPS for all communication. In fact, the next version of HTTP (v3) only supports secure connections. For this reason, you should always support HTTPS for any web application that you build.
+
+You can obtain, and renew, a web certificate by enabling the ACME protocol for your web server and communicating with Let's Encrypt to generate the needed certificates. This is not difficult to do, and many languages such as Rust, Node.js, or Go support this functionality by simply including an additional library.
+
+Caddy
+For our work we are using the web service Caddy to act as a gateway to our different services and to host our static web application files. Caddy has ACME support built into it by default, and so all you need to do is configure Caddy with the domain name for your web server. Here are the steps to take.
+
+⚠ Note that this is one of the few modification that you will manually make to your web server. Most other production changes are completed with automated continuous integration processes.
+
+Open a console window.
+
+Use the ssh console program to shell into your production environment server.
+
+➜  ssh -i [key pair file] ubuntu@[yourdomainnamehere]
+for example,
+
+➜  ssh -i ~/keys/production.pem ubuntu@myfunkychickens.click
+Edit Caddy's configuration (Caddyfile) file found in the ubuntu user's home directory.
+
+➜  cd ~
+➜  vi Caddyfile
+Modify the Caddy rule for handling requests to port 80 (HTTP), to instead handle request for your domain name. By not specifying a port the rule will serve up files using port 443 (HTTPS), and any request to port 80 will automatically redirect the browser to port 443. Replace :80 with your domain name (e.g. myfunkychickens.click). Make sure that you delete the colon.
+
+Modify the Caddy rules that route the traffic for the two web applications that we will build. To do this replace the two places where yourdomain appears with your domain name (e.g. myfunkychickens.click).
+
+Review the Caddyfile to make sure it looks right. If your domain name was myfunkychickens.click it would look like the following.
+
+myfunkychickens.click {
+   root * /usr/share/caddy
+   file_server
+   header Cache-Control no-store
+   header -etag
+   header -server
+}
+
+
+startup.myfunkychickens.click {
+   reverse_proxy * localhost:4000
+   header Cache-Control no-store
+   header -server
+   header -etag
+   header Access-Control-Allow-Origin *
+}
+
+simon.myfunkychickens.click {
+   reverse_proxy * localhost:3000
+   header Cache-Control no-store
+   header -server
+   header -etag
+   header Access-Control-Allow-Origin *
+}
+Save the file and exit VI (:wq)
+
+Restart Caddy so that your changes take effect. Note that this requires you to use sudo (super user do) to elevate your user to have the rights to restart the gateway.
+
+sudo service caddy restart
+If you open your browser and navigate to your domain name you will now see that the browser is displaying a lock icon, using HTTPS, and your certificate has been automatically requested by Caddy and issued by Let's Encrypt.
+
+Browser with HTTPS
+
+☑ Assignment
+If you have not already leased a domain name then go back and review that instruction.
+
+Secure your web server communication by configuring Caddy to request a certificate from Let's Encrypt for you domain name.
+
+Submit a URL for web server's hostname to the Canvas assignment.
+
+Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
+
+Common problems
+Symptom	Reason
+The browser doesn't display by website	Check that the browser hasn't inserted a www subdomain prefix. Some browsers will hide this. You must actually click on the domain name in the address bar to see what it is really using
+My root domain works, but not the simon or startup subdomains	Your Caddy file is not configured properly. Check for typos. Also make sure you removed the : from the start of the Caddy rule.
+My simon or start up subdomains work, but not my root domain	Your Caddy file is not configured properly. Check for typos.
+
+## HTML Structure
+HTML structure elements
+The two major purposes of HTML is to provide structure and content to your web application. Some of the common HTML structural elements include body, header, footer, main, section, aside, p, table, ol/ul, div, and span. We demonstrate the use of each element with the following HTML document. It starts with the top level content body. The body has three children, a header, main, and footer. Each of the body children then contains other structural content.
+
+The header contains a paragraph with a span, and a navigation containing multiple divisions of sub-content.
+
+The main contains multiple sections that contain either an unordered list (ul) or a table. Main also contains an aside for content that does not fit the content flow of the sections.
+
+The footer has a content division with a single span.
+
+<body>
+  <p>Body</p>
+  <header>
+    <p>Header - <span>Span</span></p>
+    <nav>
+      Navigation
+      <div>Div</div>
+      <div>Div</div>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <p>Section</p>
+      <ul>
+        <li>List</li>
+        <li>List</li>
+        <li>List</li>
+      </ul>
+    </section>
+    <section>
+      <p>Section</p>
+      <table>
+        <tr>
+          <th>Table</th>
+          <th>Table</th>
+          <th>Table</th>
+        </tr>
+        <tr>
+          <td>table</td>
+          <td>table</td>
+          <td>table</td>
+        </tr>
+      </table>
+    </section>
+    <aside>
+      <p>Aside</p>
+    </aside>
+  </main>
+
+  <footer>
+    <div>Footer - <span>Span</span></div>
+  </footer>
+</body>
+If we rendered this HTML, and added just a bit of styling, so we can see how they related to each other, we would see the following.
+
+HTML structure
+
+Properly representing the page structure using the elements is important not only so it makes logical sense to a programmer, but also so that automated tools like search indexing crawlers and accessibility screen readers can correctly interpret the document.
+
+Block and inline
+There is a distinction between structure elements that are block vs inline. A block element is meant to be a distinct block in the flow of the content structure. An inline element is meant to be inline with the content flow of a block element. In other words, inline elements do not disrupt the flow of a block element's content. For example, the block element div (division) could have an inline element b in order to bring attention to a portion of its sub-text. Likewise a p (paragraph) element could have a span to mark the paragraph's sub-text as a person's name.
+
+<div>He said <b>don't</b> cross the beams.</div>
+
+<p>Authors such as <span>ee cummings</span> often used unconventional structure.</p>
+☑ Assignment
+Create a fork of this CodePen do the following:
+
+Replace the navigation div elements with anchor elements that have hyperlinks to BYU and FamilySearch.
+Change the section ul element text to be "apples", "bananas", and "oranges".
+Add an img element to the aside element. Use the URL of an image on some other website. Use the width attribute to size it properly.
+Add another row to the table with the text HTML, CSS, and JavaScript.
+Add your name in a h1 element to the header element.
+Add a hyperlink to the footer element to your GitHub repository.
+When you are done save your changes and submit your CodePen URL to the Canvas assignment.
+
+HTML structure assignment
+
+Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
+
+## Inputs
+HTML input elements
+📖 Deeper dive reading: MDN Input element
+
+From the very early days of HTML it contained elements for accepting the input of user data. These elements include the following:
+
+Element	Meaning	Example
+form	Input container and submission	<form action="form.html" method="post">
+fieldset	Labeled input grouping	<fieldset> ... </fieldset>
+input	Multiple types of user input	<input type="" />
+select	Selection dropdown	<select><option>1</option></select>
+optgroup	Grouped selection dropdown	<optgroup><option>1</option></optgroup>
+option	Selection option	<option selected>option2</option>
+textarea	Multiline text input	<textarea></textarea>
+label	Individual input label	<label for="range">Range: </label>
+output	Output of input	<output for="range">0</output>
+meter	Display value with a known range	<meter min="0" max="100" value="50"></meter>
+Form element
+The main purpose of the form element is to submit the values of the inputs it contains. Before JavaScript was introduced the form container element was essential because it was the only way for the browser to send the input data to a web server as part of a request to process the input and generate a new web page displaying the result of the input. With JavaScript we have much more control over input data and what is done with it. For example, in a single page application the JavaScript will dynamically rebuild the HTML elements to reflect the results of the user interaction. With this ability the data may not even be sent to the server. This greatly reduces the necessity of the form element, but it is often still used simply as a container. Just remember that you are not required to have a form element to use input elements.
+
+Here is an example of a simple form that submits the value of a textarea element.
+
+<form action="submission.html" method="post">
+  <label for="ta">TextArea: </label>
+  <textarea id="ta" name="ta-id">
+Some text
+  </textarea>
+  <button type="submit">Submit</button>
+</form>
+Pressing the submit button sends the following data to the web server. The browser generates the data by combining the textarea's name attribute with the current value of the textarea.
+
+ta-id=Some+text
+Input element
+The input element represents many different input types. You set the type of input with the type attribute. There are several different types to choose from. This includes different flavors of textual, numeric, date, and color inputs.
+
+Type	Meaning
+text	Single line textual value
+password	Obscured password
+email	Email address
+tel	Telephone number
+url	URL address
+number	Numerical value
+checkbox	Inclusive selection
+radio	Exclusive selection
+range	Range limited number
+date	Year, month, day
+datetime-local	Date and time
+month	Year, month
+week	Week of year
+color	Color
+file	Local file
+submit	button to trigger form submission
+In order to create an input you specify the desired type attribute along with any other attribute associated with that specific input. Here is an example of a checked radio button and its associated label.
+
+<label for="checkbox1">Check me</label> <input type="checkbox" name="varCheckbox" value="checkbox1" checked />
+Most input elements share some common attributes. These include the following.
+
+Attribute	Meaning
+name	The name of the input. This is submitted as the name of the input if used in a form
+disabled	Disables the ability for the user to interact with the input
+value	The initial value of the input
+required	Signifies that a value is required in order to be valid
+The following shows what the inputs look like when rendered. Don't worry about how clunky they look right out of the box. We will fix that when we start styling things with CSS.
+
+HTML Input
+
+Validating input
+Several of the input elements have validation built into them. This means that they will not accept a value that is not for example, a number, a URL, outside of a range, or an email address. You can also specify the required attribute on an input element to mark it as requiring a value before it can be submitted. The pattern attribute exists on text, search, url, tel, email, and password inputs. When present, the pattern attribute provides a regular expression that must match for the input to be considered as valid.
+
+You should also have validation built into your JavaScript that checks input data to ensure everything is valid before it is submitted. All of the input elements support functions for determining their validation state. Additionally, there are CSS style selectors for visualizing the validity of the input. In order to have a good user experience, it is critical that you provide sufficient user feedback early in the input process. A good design will give feedback as, or before, the user begins to input. A poor design will keep the user guessing as to why the data is not being accepted, or even if it was accepted.
+
+## Media Elements
+HTML media elements
+The HTML elements that represent media include img, audio, video, svg, and canvas. The img, audio, and video elements are all simple references to an external file, but svg and canvas both contain the code to render a visual image that can even be animated.
+
+External media
+The media tags that reference external media all take a URL as an attribute. The path represented by the URL can either be a relative path or full path. A full path includes the protocol, domain name, and path to the file.
+
+https://images.pexels.com/photos/164170/pexels-photo-164170.jpeg
+A relative path references a file that is served from the same location as the HTML page rendering the element. You want to make the path as relative as possible so that you can move your code around without having to actually adjust all of the external page references. For example, if your HTML page is located in a directory with a subdirectory named images that contains a file named photo.jpg you would use a relative path as follows.
+
+images/photo.jpg
+Image
+To include an image in your content you use the img element and specify the src attribute with the URL to the source image. In order to support accessibility, you should also include an alt attribute that describes the image. A full img element would look like the following.
+
+<img alt="mountain landscape" src="https://images.pexels.com/photos/164170/pexels-photo-164170.jpeg" />
+mountain landscape
+
+Audio
+To include an audio file in your content you use the audio element and specify the src attribute with the URL to the source audio file. You can include the controls attribute if you want the user to be able to control the audio playback. If you do not display the controls then there is no visual representation of the audio in the rendered page. The autoplay attribute starts the audio playing as soon as the audio file is loaded, and the loop attribute keeps it playing over and over.
+
+⚠ Note that automatically playing audio is strongly discouraged unless you provide a way for the user to opt-in to that behavior.
+
+<audio controls src="testAudio.mp3"></audio>
+Html Audio
+
+Video
+To include a video in your content you use the video element and specify the src attribute with the URL to the source video. Like the audio element you can include the controls or autoplay attributes.
+
+⚠ Note that you may need to include the crossorigin="anonymous" attribute if you are requesting files from a different domain than the one serving your content.
+
+<video controls width="300" crossorigin="anonymous">
+  <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
+</video>
+HTML video
+
+Internal media
+The internal media elements svg and canvas allow you to actually create images directly within your HTML.
+
+Scalable Vector Graphics (SVG)
+SVG is an extremely powerful and widely supported way to render graphics inline in your HTML. An example SVG graphic that draws a black border and a red circle looks like this:
+
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" stroke="red" fill="red" style="border: 1px solid #000000">
+  <circle cx="150" cy="100" r="50" />
+</svg>
+SVG demo
+
+When combined with JavaScript and CSS you can produce some amazing visualizations. Checkout this CodePen for an example.
+
+Consult the MDN documentation if you are interested in learning more about SVG.
+
+Canvas
+The canvas element was introduced to HTML in order to facilitate 2D drawing and animation. The HTML for the canvas element is fairly simple, but actually drawing on the canvas requires JavaScript support. Here again, is our simple red dot example.
+
+<canvas id="canvasDemo" width="300" height="200" style="border: 1px solid #000000"></canvas>
+<script>
+  const ctx = document.getElementById('canvasDemo').getContext('2d');
+  ctx.beginPath();
+  ctx.arc(150, 100, 50, 0, 2 * Math.PI);
+  ctx.fillStyle = 'red';
+  ctx.strokeStyle = 'red';
+  ctx.fill();
+  ctx.stroke();
+</script>
 
 
 # CSS
