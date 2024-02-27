@@ -1,4 +1,12 @@
 # Creating A Website!
+
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/2e2bac57-b2cc-45da-80bd-523a5a9cc618)
+
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/e22dcdff-7665-41f8-8947-2be1941b97fa)
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/f03b11c3-af53-449f-a249-4583609a1ff2)
+
+
+
 The primary objective of this course is to help you understand the technologies necessary to launch a web application startup. Towards this goal you will build your very own startup application. The actual application you build is entirely up to you, but it must successfully demonstrate the technologies we focus on.
 
 The course is divided into distinct milestones. At each milestone you will evolve your startup application to take on more and more functionality. You start with a conceptual design document and then build a structural shell for the application using HTML. Next comes styling with CSS, interactivity with JavaScript, using third party web services, hosting your own web service, database connectivity for persistent storage, authentication, data pushed from the server with WebSockets, and finally, converting to a modern web framework with React.
@@ -117,6 +125,378 @@ The only thing certain is that you have an opportunity to be a big part of it. O
 
 # HTML
 Description here:
+## Console
+The Console
+📖 Deeper dive reading: MDN Command line crash course
+
+Before the creation of graphical user interfaces, all computing systems were simple console environments consisting as of a prompt for inputting a command and the display of the command output. All of the original programming tools ran as console application. The console tradition is still actively used by professional developers and most programming tools execute within a console window.
+
+Also known as the command line, shell, or terminal, the console window is an essential web development tool. The console provides access to the file system and allows for the execution of command line applications.
+
+There are many console applications that you can chose from. All operating systems come with a default console, but you will probably want to install one in order to get the best experience. Here is an example of Warp running on a Mac.
+
+Warp
+
+Make sure you have a console application
+In order for you to successfully use the console for web programming it must be POSIX compliant. POSIX compliance means that it supports a standard set of console commands. Both Mac and Linix support POSIX. That means any necessary console commands will work on those operating systems.
+
+Getting a console application for Windows
+If you are using Microsoft Windows you can get a reasonable approximation of a POSIX compliant console by installing Git Bash. When installing, use all the default settings.
+
+Once it is installed, hit the Windows button on your keyboard, and type Git Bash. This should open a console window that looks something like the following. Make sure you look for the Git Bash icon so that you don't accidentally use an non-POSIX compatible console application.
+
+Git Bash
+
+⚠ Do not use Git Command, cmd, or Powershell. That will not work for the commands and scripts we run in this class.
+
+You can use Windows Subsystem for Linux (WSL) (e.g Ubuntu on Windows) for your work in this class, but you must be very careful to do all of your work actually within WSL. Don't download files to your Windows partition and then access them from WSL. It is suggested that you use Git Bash instead of WSL, unless you are really familiar with WSL.
+
+Testing your console application
+Once you have a acceptable console application on your development computer, open it up and make sure you can run a simple POSIX compliant command such as printf 'hello\n'.
+
+Console printf
+
+If this displays hello then you are on the right track. If that doesn't work then you are using a console application that is not POSIX compliant. For example, Windows Powershell will not work.
+
+Viewing the file system
+One of the primary purposes of a console application is to view the files on the computer. The files on a computer are organized into a tree structure of nodes called directories. At any given point in time your console is located at one of the directories in the file system. You can see which directory you are in with the pwd (present working directory) command.
+
+➜  pwd
+
+/Users/student/byu//webprogramming260
+You can list all of the files in the directory with ls (list files). Most command line applications take parameters that are specified after you type the application name. For example, ls can list all files (even hidden ones) in a long format if you provide the parameter -la.
+
+➜ ls -la
+
+total 16
+-rw-r--r--  1 lee  staff   1.0K Nov 19 08:47 LICENSE
+-rw-r--r--  1 lee  staff    82B Nov 19 08:47 README.md
+drwxr-xr-x  4 lee  staff   128B Nov 19 08:48 profile
+drwxr-xr-x  4 lee  staff   128B Nov 19 08:47 react
+Executing commands
+The other primary purpose of the console is to execute commands. You already did this in the previous section when you executed commands for working with the file system. However, console commands can perform many different operations. Here are some basic commands that you show experiment with.
+
+echo - Output the parameters of the command
+cd - Change directory
+mkdir - Make directory
+rmdir - Remove directory
+rm - Remove file(s)
+mv - Move file(s)
+cp - Copy files
+ls - List files
+curl - Command line client URL browser
+grep - Regular expression search
+find - Find files
+top - View running processes with CPU and memory usage
+df - View disk statistics
+cat - Output the contents of a file
+less - Interactively output the contents of a file
+wc - Count the words in a file
+ps - View the currently running processes
+kill - Kill a currently running process
+sudo - Execute a command as a super user (admin)
+ssh - Create a secure shell on a remote computer
+scp - Securely copy files to a remote computer
+history - Show the history of commands
+ping - Check if a website is up
+tracert - Trace the connections to a website
+dig - Show the DNS information for a domain
+man - Look up a command in the manual
+You can also chain the input and output of commands using special characters
+
+| - Take the output from the command on the left and pipe, or pass, it to the command on the right
+> - Redirect output to a file. Overwrites the file if it exists
+>> - Redirect output to a file. Appends if the file exists
+For example, you can list the files in a directory, pipe it into grep to search for files created in Nov, and then pipe that into wc to count the number of files found with a date of Nov.
+
+ls -l | grep ' Nov ' | wc -l
+There are also keystrokes that have special meaning in the console.
+
+CTRL-R - Use type ahead to find previous commands
+CTRL-C - Kill the currently running command
+☑ Assignment
+Experiment with console commands. Open a console window and create a test directory that you can play with by executing the command mkdir test (make directory). Then execute the command cd test to change into that directory. Then execute the following sequence of commands:
+
+mkdir test
+cd test
+pwd
+ls
+ls -la
+ls ../
+printf "x" > test.txt
+ls -l
+cat test.txt
+cp test.txt other.txt
+ls
+cat test.txt >> other.txt
+rm test.txt
+less other.txt # press `q` to exit less
+for i in {1..2}; do printf 'y' >> other.txt; done;
+Once you have done this, go over to the assignments page in Canvas and submit the text that results from running cat other.txt.
+
+The better you get at working with the console the more efficient your programming will be.
+## Web Services
+### Amazon Webservices EC2
+Amazon Web Services - EC2
+Now that you know all about web servers, it is time for you to rent your own. In theory you could contact your ISP and lease an IP address that you would then associate with your laptop. This would make your laptop into a web server, but this has the downside of requiring your laptop to always be available, have enough bandwidth to support your millions of fans, and creates a significant security risk for your laptop. Instead we want to use a cloud provider that can give you an inexpensive small computer that you can experiment with and throw away any time that you would like. This is actually exactly what many web companies do with their core business and so it should work fine for you.
+
+When you rent a web server, it is physically located in a massive data center located in a place like Virginia, Ohio, Dublin, or Tokyo. Think of a data center as a very secure, climate controlled, warehouse that has hundreds of thousands of computers sitting in massive racks.
+
+Data center
+
+Creating an AWS server instance
+Assuming you already have an AWS account it is time to create your web server.
+
+⚠ Note that the AWS interface changes all the time, so the images given below may not match what you see. However, the concepts they represent should all be there in some shape or form.
+
+Open the AWS console in your browser and log in.
+
+Navigate to the EC2 service.
+
+Change your region (top right corner) to US East (N. Virginia) - us-east-1. Changing your region to N. Virginia will make it so that your server is located there. ⚠ This is crucial because the Amazon Machine Image (AMI) you will use is only available in N. Virginia.
+
+Select the option to Launch instance.
+
+Give your instance a meaningful name. Perhaps use a convention such as [owner]-[purpose]-[version].
+
+AWS Instance name
+
+We have created an Amazon Machine Image (AMI) for you to use as the base for your server. It has Ubuntu, Node.js, NVM, Caddy Server, and PM2 built right in so that you do not have to install them. Paste this AMI ID (ami-0b009f6c56cdd83ed) into the search box and press enter. Then select the Community AMIs tab. If no matches are found, make sure that your region is set to US East (N. Virginia) - us-east-1 (You can check this by looking in the top right corner of the page).
+
+AWS Instance name
+
+This should display the information about the class AMI. If the AMI ID matches ami-0b009f6c56cdd83ed select it.
+
+AWS class AMI
+
+Select t3.nano, t3.micro, or t2.micro for the instance type depending on how much power you want, how much you want to spend, or if you qualify for a free usage tier. If you qualify for a free usage tier then pick that that instance type, otherwise choose the cheapest one. You can always change this later if your server is running slow and needs more power.
+
+AWS Instance name
+
+Create a new key pair. Make sure you save the key pair to your development environment. This needs to be safe in a place that is not publicly accessible and that you won't accidentally delete or commit to a GitHub repository. You will need this every time you secure shell (ssh) into this server (production environment). Note that you don't have to create a new key pair every time you launch an instance. You can use one that you created previously so that all of the servers you create can be accessed with the same key file.
+
+AWS Instance name
+
+For the network settings, make sure the auto-assign public IP address is enabled. For the Firewall (security group) select the option to Create security group if this is the first server that you are creating. Allow SSH, HTTP, and HTTPS traffic from anywhere.
+
+If you have created a server before, then you already have a security group that you can use, and you should not clutter up your account with additional ones. In that case, use the option to Select existing security group and select the name of the existing security group.
+
+A security group represents the rules for allowing access to your servers. Security group rules specify both the port that is accessible on your server, and the source IP address that requests are allowed from. For example, you could allow only port 443 (the secure HTTPS port) from your development environment's IP address. However, doing so would mean that your web application would not be available from any other computer. You can learn more about security groups from the AWS documentation.
+
+AWS Instance name
+
+If you are using a T3 class server you can take an advantage of the unlimited credit specification. If you are not using at T3 class instance you can ignore this step. In the Advanced details, change the Credit specification to Unlimited. This allows your T class (throttled class) server to keep using CPU running normally even though it has exceeded its current credit limit. You do incur a minimal charge for when this happens, but the alternative is to always spend more for a larger instance, or to have your server lock up when it hits the limit. For the minimal use that your server will see, you should not normally exceed your limit, but it is nice to not have your server die if you do. Even if you do temporarily exceed the limit, the charges will be mere pennies per hour.
+
+Web Server
+
+Select the option to Launch instance.
+
+It will take a couple minutes for the instance to startup, but once it is marked as running it is close to being ready. Look at the properties for the instance and copy the public IP address.
+
+Open your browser and paste the public IP address for your server in the location bar along with the prefix http://. For example:
+
+http://3.22.63.37
+If the server has started up, then you should see the following. Otherwise, wait a little bit and refresh your browser again. If the server is marked as running and it has been longer than 5 minutes, then there is a problem.
+
+Web Server
+
+If that is what you see, then congratulations! You are now running your very own web server that the whole world can see! Time to celebrate with cookies.
+
+SSH into your server
+Now, let's remote shell into your server and see what is under the hood. Go to your console window and use SSH to shell into the server. You will need to supply the public IP address (copied from the EC2 instance details) and the location of your key pair file that you created/used when you launched your instance. Hopefully, you saved that off to a safe location in your development environment; otherwise you will need to terminate your instance and create a new one, with a new key.
+
+➜  ssh -i [key pair file] ubuntu@[ip address]
+For example,
+
+➜  ssh -i ~/keys/production.pem ubuntu@53.104.2.123
+⚠ You may get a warning that your key pair file permissions are too open. If so then you can restrict the permissions on your file so that they are not accessible to all users by running the chmod console command:
+
+chmod  600 [key pair file]
+⚠ As it connects to the server it might warn you that it hasn't seen this server before. You can confidently say yes since you are sure of the identity of this server.
+
+Once it has connected, you are now looking at a console window for the web server that you just launched and you should be in the ubuntu user's home directory. If you run ls -l, you should see something like the following. (Note that the dates might appear different.)
+
+➜  ls -l
+
+total 4
+lrwxrwxrwx 1 ubuntu ubuntu   20 Apr 13 15:06 Caddyfile -> /etc/caddy/Caddyfile
+lrwxrwxrwx 1 ubuntu ubuntu   16 Apr 13 15:06 public_html -> /usr/share/caddy
+drwxrwxr-x 4 ubuntu ubuntu 4096 Apr 13 16:48 services
+The Caddyfile is the configuration file for your web service gateway. The public_html directory contains all of the static files that you are serving up directly through Caddy when using it as a web service. We will cover Caddy configuration in a later instruction. The services directory is the place where you are going to install all of your web services once you build them.
+
+Once you are done poking around on your server, you can exit the remote shell by running the exit command. That is everything. You will only change a few configuration settings on your server in the future. With rare exception, all changes to the server are done using an automated continuous integration process.
+
+Keeping the same public IP address
+You can stop your server at any time. Don't confuse this with terminating your server which completely destroys it. Stopping your server just powers down the device. This is nice because you don't have to pay for it while it is stopped. However, every time you stop and start your server, it will be assigned a new public IP address. It is important to keep the same public IP address so that you, and others, can always browse to the same place. More importantly, when you create your domain name, you can assign it to an address that never changes.
+
+You have two choices in order to keep the same public IP address:
+
+Never stop your server.
+Assign an elastic IP address to your server so that it keeps the same address even if you stop it.
+Your first elastic IP address is free. However, the catch is that it is only free while the server instance it is assigned to is running. While your server is not running you are charged $0.005/hr. This is the same cost for running a t3.nano server instance. So if you assign an elastic IP address, you don't save any money unless you are running a more powerful instance, and are stopping your instance when you, or the TAs, don't need it.
+
+We would suggest that you do both options. Keep your server running and associate an elastic IP. That way if you do need to reboot it for some reason, you will still keep the same IP address, and it doesn't cost you anything more either way.
+
+Here is how you assign an elastic IP address to your server instance.
+
+Open the AWS console in your browser and log in.
+
+Navigate to the EC2 service.
+
+From the menu on the left select Network & Security|Elastic IPs.
+
+Press the Allocate Elastic IP address button.
+
+Press the Allocate button.
+
+Select the newly displayed allocated address and press the Actions button.
+
+Select the Associate Elastic IP address option.
+
+Elastic IP create
+
+Click on the Instance box and select your server instance.
+
+Press Associate.
+
+Assigning an elastic IP address will change the IP address for your server, but it will not change again until you release the elastic IP address. If you do terminate your server and create a new one, you can again associate the same elastic IP address with your new server.
+
+Note that your elastic IP address is allocated until your release it, not until you terminate your instance. So make sure you release it when you no longer need it. Otherwise you will get a nasty $3 bill every month.
+
+What size of server should you use?
+The t3.nano instance size has just enough memory and CPU to meet the requirements of this course if you are careful. However, if you find that your server is running slowly or erratically, you should consider upgrading to a larger instance size. If you have an elastic IP address you can change your instance size whenever you would like and you won't lose your public IP address. You can even stop your server when no one is using it. This is useful because you don't get charged for your server when it is stopped.
+
+☑ Assignment
+Create an EC2 instance using the class AMI (ami-0b009f6c56cdd83ed).
+Assign an elastic IP address (highly suggested).
+Test that you can see the default class web page from a browser using the server's public IP address.
+Submit a URL using your web server's public IP address to the Canvas assignment.
+
+Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember. This might include the IP address of your server and the command to remote shell into your server. Do not include the contents of your PEM file, passwords, or keys in your notes.
+
+Common problems
+Symptom	Reason
+You can SSH into the server, but you can't use HTTP	Check that your security group exposes SSH, HTTP, and HTTPS.
+Using the browser to hit my server using my IP was working but now it doesn't	Check that your IP address hasn't changed. Perhaps due to assigning an elastic IP address or stopping your server.
+My server doesn't come up in the browser	Check that you are not trying to use https.
+
+### Amazon Web Services - Route 53
+
+Referring to a web server by its IP address is fine for development, but it is not going to work for most users. Additionally, you want to create a secure (HTTPS) connection to your application, and that is not possible with just an IP address. Instead you want to use a domain name to represent your web application. That way you can make it easy to remember and secure. In order for you to do this you need to buy a domain name, and then create DNS records with a DNS (Domain Name System) server.
+
+Route 53 is the AWS service that handles everything DNS-related. With Route 53 you can buy a domain name, host your domain on their DNS servers, and create DNS records.
+
+⚠ You should already have an account with AWS from your work to rent a EC2 server instance. If you haven't done that work, go create your account and server following the previous instruction.
+
+Purchasing a domain name
+AWS provides extensive documentation for all their services. You can find the documentation for registering a new domain on their website. You may find the simplified directions below easier to follow, but if you run into trouble, or have additional questions, refer to the official documentation. Remember that you are leasing a domain name for a year, and so make sure it is a name that you would like. Also note that AWS credits do not apply to purchase of domain names.
+
+Open the AWS console in your browser and log in.
+
+Navigate to the Route 53 service.
+
+Select the Domains > Registered domains option from the menu on the left.
+
+Push the Register Domain option.
+
+Select the TLD that you want. AWS currently offers the .click TLD for $3 and .link for $5.
+
+Put your desired root domain into the search box and press the Check button to see if it is available. Common one or two word phrases are almost always taken. For example, 260.click is taken, but webprogramming260.click is not. Keep searching until you find one you like.
+
+Press Add to cart.
+
+AWS Find domain
+
+Fill out the contact details. This information is sent to the authorized DNS registrar and is what shows up to the world for your domain name. Once registration is complete you can see this information using the console program whois. Make sure you fill in this information correctly. Providing false information may cause the registrar to revoke your registration.
+
+⚠ If you are using new contact information that a registrar has never seen before, it will require you to verify the email address. Usually this means you will receive an email that you must respond to within 30 days. If you fail to do this your domain name will be removed from the registry without warning. Check your spam folder if you do not receive this email.
+
+Press Continue.
+
+Review everything and press Complete Order
+
+It may take a while before your purchase is completed, but when it is the Route 53 service dashboard will show that you have a hosted zone for your domain name.
+
+Manage your DNS records
+Now that you own a domain name you can use it to create DNS records that will map domain names to IP addresses (A records) or other domain names (CNAME records). For the purposes of this class, you want your root domain name, and any subdomain of your root domain, to map to the IP address of the web server you created previously.
+
+You will need the public IP address for your server. You can get the public IP address by opening the AWS browser console and viewing the details of your server on the EC2 service page.
+
+⚠ Note that the AWS browser console interface changes all the time; the directions below may not match exactly, but similar functionality should be there in some shape or form.
+
+Open the AWS console in your browser and log in.
+Navigate to the Route 53 service.
+Select the Hosted zones option from the menu on the left.
+You should see your domain name listed here. If it doesn't then the registration did not complete, or it is still pending. In that case go review the information found under Domains > Pending requests.
+Click on your domain name to view the details. This should display existing DNS records with types such as NS, and SOA.
+First, create the root domain DNS record. This will associate your domain name with your server's IP address and allow you to use your domain name in the browser to navigate to your server.
+Press the Create record button.
+In the Value box enter the public IP address of your server.
+Press Create records
+A new A type record should appear in your list of records that represents the root domain name and your server's public IP address.
+Next we will create a DNS record that will map to your server for any subdomain of your root domain name. This is possible because DNS allows you to specify wildcards for a DNS record.
+Press the Create record button.
+In the Record name box enter the text *. This wildcard represents that any subdomain will match this record, so long as it is not explicitly defined by another DNS record.
+In the Value box enter the public IP address of your server.
+Press Create records
+A new A type record should appear in your list of records that represents the wildcard subdomain name and your server's public IP address.
+Your DNS records should look similar to the following when you are done.
+
+AWS DNS records
+
+By defining both a record for your root domain and a wildcard record for any subdomain of your root domain you can now navigate to your server with either your domain name or a subdomain. For example, if you purchased the domain name myfunkychickens.click you could reach your server by navigating your browser to myfunkychickens.click, simon.myfunkychickens.click, or startup.myfunkychickens.click.
+
+Open your browser and paste your domain in the location bar along with the prefix http://. For example:
+
+http://myfunkychickens.click
+This should show your web server's default page just like it did when you used the IP address.
+
+Browsing to hostname
+
+Note that your browser will warn you that the website is not secure. We will resolve that in future instruction when we configure Caddy to generate a website certificate for you.
+
+Other record types
+The additional NS and SOA type records that were listed for your domain name are important for working with DNS. These records were created automatically for you when you registered your domain name. The name server (NS) record contains the names of the authoritative name servers that authorize you to place DNS records in this DNS server. Those same authoritative name servers are listed with the registrar that you leased your domain name from. That way the authoritative name server can verify that the DNS records and the DNS registration match and are authorized to represent the domain name when defining DNS records. Otherwise a hacker could just add DNS records and take over your domain name.
+
+The start of authority (SOA) record provides contact information about the owner of this domain name.
+
+Lease a domain name
+Open the AWS browser console and log in.
+Use Route 53 to purchase a domain name.
+Set up your DNS records using Route 53. Make sure you have a record representing your root domain name, and a wild card subdomain.
+Test that you can access your server using your domain name and any subdomain name.
+Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
+
+Common problems
+Symptom	Reason
+I leased my domain name and set up DNS, but I can't hit it with the browser	Give it some time. Perhaps 10 minutes. Use dig or nslookup to see if the DNS records are publicly available. Check to see if the IP address is correct. Make sure the DNS records are correct.
+The browser doesn't display my website	Check that you are not trying to use https. Check that the browser hasn't inserted a www subdomain prefix. Some browsers will hide this. You must actually click on the domain name in the address bar to see what it is really using
+My root domain works, but not the simon or startup subdomains	Check your DNS records. Make sure you created a wildcard *.yourdomain record.
+My simon or startup subdomains work, but not my root domain	Check your DNS records. Make sure you have a root record.
+My domain name was working, but after 30 days it stopped.	Make sure you received and responded the the email from the registrar to verify your email address. Check your spam folder if you did not receive an email.
+
+## Editor commands
+
+keystroke	meaning
+:h	help
+i	enter insert mode. This will allow you to type and delete text. Use ESC to exit insert mode. No other commands will work while in insert mode.
+u	undo
+CTRL-r	redo
+gg	go to beginning of file
+G	go to end of file
+/	search for text that you type after /
+n	next search match
+N	previous search match
+v	visually select text
+y	yank or copy selected text to clipboard
+p	paste clipboard
+CTRL-wv	Split window vertically
+CTRL-ww	Toggle windows
+CTRL-wq	Close current window
+:e	Open a file. Type ahead available. If you open a directory you can navigate it in the window
+:w	write file (save)
+:q	quit. Use :q! to exit without saving
+
 ## Caddy
 Caddy
 Caddy
