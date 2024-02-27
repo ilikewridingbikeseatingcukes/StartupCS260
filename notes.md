@@ -89,5 +89,8 @@ Classes,Pointers,Inheritance:https://learn.cs260.click/page/javascript/objectCla
 Regular Expressions:https://learn.cs260.click/page/javascript/regularExpressions/regularExpressions_md
 :https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions
 
+![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/159776b5-a240-4c2a-be42-435db17cb93a)
+
+
 
 
