@@ -86,7 +86,8 @@ In-depth Guide:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 
 Classes,Pointers,Inheritance:https://learn.cs260.click/page/javascript/objectClasses/objectClasses_md
 
-
+Regular Expressions:https://learn.cs260.click/page/javascript/regularExpressions/regularExpressions_md
+:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions
 
 
 
