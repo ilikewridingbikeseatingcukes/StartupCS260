@@ -80,27 +80,203 @@ console.log(a.length);
 // OUTPUT: 3
 
 Json 
-Website Guide:https://learn.cs260.click/page/javascript/json/json_md
-Dummies Guide:https://www.w3schools.com/whatis/whatis_json.asp
-In-depth Guide:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
+Website Guide:JSON
+📖 Deeper dive reading:
 
-Classes,Pointers,Inheritance:https://learn.cs260.click/page/javascript/objectClasses/objectClasses_md
+MDN JSON
+Douglas Crockford: The JSON Saga
+JavaScript Object Notation (JSON) was conceived by Douglas Crockford in 2001 while working at Yahoo! JSON, pronounced like the name Jason, received official standardization in 2013 and 2017 (ECMA-404, RFC 8259).
+
+JSON provides a simple, and yet effective way, to share and store data. By design JSON is easily convertible to, and from, JavaScript objects. This make it a very convenient data format when working with web technologies. Because of its simplicity, standardization, and compatibility with JavaScript, JSON has become one of the world's most popular data formats.
+
+Format
+A JSON document contains one of the following data types:
+
+Type	Example
+string	"crockford"
+number	42
+boolean	true
+array	[null,42,"crockford"]
+object	{"a":1,"b":"crockford"}
+null	null
+Most commonly, a JSON document contains an object. Objects contain zero or more key value pairs. The key is always a string, and the value must be one of the valid JSON data types. Key value pairs are delimited with commas. Curly braces delimit an object, square brackets and commas delimit arrays, and strings are always delimited with double quotes.
+
+Here is an example of a JSON document.
+
+{
+  "class": {
+    "title": "web programming",
+    "description": "Amazing"
+  },
+  "enrollment": ["Marco", "Jana", "فَاطِمَة"],
+  "start": "2025-02-01",
+  "end": null
+}
+JSON is always encoded with UTF-8. This allows for the representation of global data.
+
+Converting to JavaScript
+You can convert JSON to, and from, JavaScript using the JSON.parse and JSON.stringify functions.
+
+const obj = { a: 2, b: 'crockford', c: undefined };
+const json = JSON.stringify(obj);
+const objFromJson = JSON.parse(json);
+
+console.log(obj, json, objFromJson);
+
+// OUTPUT:
+// {a: 2, b: 'crockford', c: undefined}
+// {"a":2, "b":"crockford"}
+// {a: 2, b: 'crockford'}
+Note that in this example, JSON cannot represent the JavaScript undefined object and so it gets dropped when converting from JavaScript to JSON.
+Dummies Guide:JSON stands for JavaScript Object Notation
+
+JSON is a lightweight format for storing and transporting data
+
+JSON is often used when data is sent from a server to a web page
+
+JSON is "self-describing" and easy to understand
+
+## Classes,Pointers,Inheritance :JavaScript object and classes
+📖 Deeper dive reading: MDN Classes in JavaScript
+
+A JavaScript object represents a collection of name value pairs referred to as properties. The property name must be of type String or Symbol, but the value can be of any type. Objects also have common object-oriented functionality such as constructors, a this pointer, static properties and functions, and inheritance.
+
+Objects can be created with the new operator. This causes the object's constructor to be called. Once declared you can add properties to the object by simply referencing the property name in an assignment. Any type of variable can be assigned to a property. This includes a sub-object, array, or function. The properties of an object can be referenced either with dot (obj.prop) or bracket notation (obj['prop']).
+
+const obj = new Object({ a: 3 });
+obj['b'] = 'fish';
+obj.c = [1, 2, 3];
+obj.hello = function () {
+  console.log('hello');
+};
+
+console.log(obj);
+// OUTPUT: {a: 3, b: 'fish', c: [1,2,3], hello: func}
+The ability to dynamically modify an object is incredibly useful when manipulating data with an indeterminate structure.
+
+⚠ Note the different uses of the term object. Object can refer to the standard JavaScript objects (e.g. Promise, Map, Object, Function, Date, ...), or it can refer specifically to the JavaScript Object object (i.e. new Object()), or it can refer to any JavaScript object you create (e.g. {a:'a', b:2} ). This overloaded usage can be a bit confusing.
+
+Object-literals
+You can also declare a variable of object type with the object-literal syntax. This syntax allows you to provide the initial composition of the object.
+
+const obj = {
+  a: 3,
+  b: 'fish',
+};
+Object functions
+Object has several interesting static functions associated with it. Here are some of the commonly used ones.
+
+Function	Meaning
+entries	Returns an array of key value pairs
+keys	Returns an array of keys
+values	Returns an array of values
+const obj = {
+  a: 3,
+  b: 'fish',
+};
+
+console.log(Object.entries(obj));
+// OUTPUT: [['a', 3], ['b', 'fish']]
+console.log(Object.keys(obj));
+// OUTPUT: ['a', 'b']
+console.log(Object.values(obj));
+// OUTPUT: [3, 'fish']
+Constructor
+Any function that returns an object is considered a constructor and can be invoked with the new operator.
+
+function Person(name) {
+  return {
+    name: name,
+  };
+}
+
+const p = new Person('Eich');
+console.log(p);
+// OUTPUT: {name: 'Eich'}
+Because objects can have any type of property value you can create methods on the object as part of its encapsulation.
+
+function Person(name) {
+  return {
+    name: name,
+    log: function () {
+      console.log('My name is ' + this.name);
+    },
+  };
+}
+
+const p = new Person('Eich');
+p.log();
+// OUTPUT: My name is Eich
+This pointer
+Notice in the last example the use of the keyword this when we referred to the name property (this.name). The meaning of this depends upon the scope of where it is used, but in the context of an object it refers to a pointer to the object. We will talk more about the this pointer in the instruction on scope.
+
+Classes
+You can use classes to define objects. Using a class clarifies the intent to create a reusable component rather than a one-off object. Class declarations look similar to declaring an object, but classes have an explicit constructor and assumed function declarations. The person object from above would look like the following when converted to a class.
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  log() {
+    console.log('My name is ' + this.name);
+  }
+}
+
+const p = new Person('Eich');
+p.log();
+// OUTPUT: My name is Eich
+You can make properties and functions of classes private by prefixing them with a #.
+
+class Person {
+  #name;
+
+  constructor(name) {
+    this.#name = name;
+  }
+}
+
+const p = new Person('Eich');
+p.#name = 'Lie';
+// OUTPUT: Uncaught SyntaxError: Private field '#name' must be declared in an enclosing class
+Inheritance
+Classes can be extended by using the extends keyword to define inheritance. Parameters that need to be passed to the parent class are delivered using the super function. Any functions defined on the child that have the same name as the parent override the parent's implementation. A parent's function can be explicitly accessed using the super keyword.
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  print() {
+    return 'My name is ' + this.name;
+  }
+}
+
+class Employee extends Person {
+  constructor(name, position) {
+    super(name);
+    this.position = position;
+  }
+
+  print() {
+    return super.print() + '. I am a ' + this.position;
+  }
+}
+
+const e = new Employee('Eich', 'programmer');
+console.log(e.print());
+// OUTPUT: My name is Eich. I am a programmer
 
 ## Regular Expressions##
-:https://learn.cs260.click/page/javascript/regularExpressions/regularExpressions_md
-:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions
-
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/159776b5-a240-4c2a-be42-435db17cb93a)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/941dd0a1-149a-4b33-bb3c-9b456958a026)
 
 ## Rest&Spred##
-:https://learn.cs260.click/page/javascript/restSpread/restSpread_md
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/cb13a5ef-e985-4db2-b9cf-1aefed6ca5bc)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/c8d892ef-c28b-400d-a18e-d2e29bab3bfa)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/8c183b18-5921-44e9-aa1d-582b702e5713)
 
 ## Exeptions(Try/accept/fallbacks)##
-:https://learn.cs260.click/page/javascript/exceptions/exceptions_md
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/54aa6345-dc65-4023-bd36-845ffd893b19)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/c306833f-5a37-4905-b7d2-7941f684ab0c)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/cb365d51-10a6-4b64-9d5c-33f0553e062d)
@@ -108,7 +284,6 @@ Classes,Pointers,Inheritance:https://learn.cs260.click/page/javascript/objectCla
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/f9b17b33-e3e0-4d9f-bd26-de55def12161)
 
 ## Destructuring##
-:https://learn.cs260.click/page/javascript/destructuring/destructuring_md
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/3e804ede-3c2f-4793-a6d5-ed6ff01a50cf)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/52ace916-6de8-4c05-9ab3-484c5b45e620)
 ![image](https://github.com/ilikewridingbikeseatingcukes/StartupCS260/assets/144496562/b76b0f7e-534a-4681-95d7-913a9e50f1b2)
